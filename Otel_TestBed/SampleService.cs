@@ -25,6 +25,7 @@ public class SampleService : ISampleService
         return "This function returns only one level of result";
     }
 
+    [TraceActivity("fixTest")]
     [ActivitiesAttributes("expenseType:Capex", "businessUnit:Dev")]
     public TestResult LowLevelRandomTryCatch()
     {

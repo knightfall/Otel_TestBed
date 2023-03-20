@@ -37,7 +37,7 @@ builder.Services.AddOpenTelemetry().WithTracing(providerBuilder =>
         });
 });
 
-builder.Services.AddTransient<ISampleService, SampleService>().Decorate<ISampleService>(x => TraceDecorator<ISampleService>.Create(x));
+builder.Services.AddTransient<ISampleService, SampleService>().Decorate<ISampleService>(x => TraceDecorator<ISampleService>.Create(x,decorateAllMethods:true));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
